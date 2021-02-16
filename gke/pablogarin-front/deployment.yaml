@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pablogarin-frontend
+  namespace: pablogarin
   labels:
     app: pablogarin-front
     test: test

@@ -1,15 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pablogarin-frontend-service
+  name: pablogarin-backend-service
+  namespace: pablogarin
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: pablogarin.dev
+  - host: api.pablogarin.dev
     http:
       paths:
       - path: /
         backend:
-          serviceName: pablogarin-frontend-service
+          serviceName: pablogarin-backend-service
           servicePort: 80   

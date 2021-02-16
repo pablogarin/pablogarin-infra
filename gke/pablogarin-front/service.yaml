@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pablogarin-backend-service
+  name: pablogarin-frontend-service
+  namespace: pablogarin
   labels:
-    app: pablogarin-bff
+    app: pablogarin-front
 spec:
   type: LoadBalancer
   selector:
-    app: pablogarin-bff
+    app: pablogarin-front
   ports:
     - protocol: TCP
       name: http
       port: 80
-      targetPort: 3000
+      targetPort: 5000

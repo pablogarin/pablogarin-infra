@@ -3,11 +3,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pablogarin-backend
+  namespace: pablogarin
   labels:
     app: pablogarin-bff
     test: test
   # annotations:
-  #   fluxcd.io/tag.example-app: semver:~1.0
+  #   fluxcd.io/tag.pablogarin-bff: semver:~1.0
   #   fluxcd.io/automated: 'true'
 spec:
   selector:
@@ -43,5 +44,5 @@ spec:
         #   limits:
         #     memory: "64Mi"
         #     cpu: "500m"
-      imagePullSecrets:
-        - name: regcred
+      # imagePullSecrets:
+      #   - name: regcred
