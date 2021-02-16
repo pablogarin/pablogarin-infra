@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pablogarin-frontend-service
+  labels:
+    app: pablogarin-front
+spec:
+  type: LoadBalancer
+  selector:
+    app: pablogarin-front
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+      targetPort: 5000
