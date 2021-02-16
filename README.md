@@ -13,3 +13,20 @@ Execute the following commands:
 - `gcloud container clusters get-credentials pablogarin-cluster --zone us-east1-b`
 
 Now if you run `kubectl cluster-info` you should see the cluster information.
+
+
+## Cluster dependencies
+
+This cluster has dependencies which have to be met in order for it to work.
+
+*TODO:* Find out how to deploy this using terraform or similar.
+
+### NGINX Ingress Controller
+
+Instructions copied from [kubernetes github](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke)
+
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml`
+
+### SealedSecrets
+
+`kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.12.4/controller.yaml`
