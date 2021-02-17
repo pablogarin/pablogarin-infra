@@ -1,2 +1,5 @@
 .DS_Store
 config
+kubeseal
+mongodb_credentials
+secret.yaml

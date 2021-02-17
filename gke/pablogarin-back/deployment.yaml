@@ -31,6 +31,17 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: environment-configmap
+              key: NODE_ENV
+        - name: MONGODB_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: mongosecret
+              key: secret
         # livenessProbe:
         #   httpGet:
         #     path: /health
@@ -44,5 +55,6 @@ spec:
         #   limits:
         #     memory: "64Mi"
         #     cpu: "500m"
+      restartPolicy: Always
       # imagePullSecrets:
       #   - name: regcred
