@@ -43,11 +43,11 @@ spec:
         #     port: 3000
         #   initialDelaySeconds: 3
         #   periodSeconds: 3
-        # resources:
-        #   requests:
-        #     memory: "64Mi"
-        #     cpu: "50m"
-        #   limits:
-        #     memory: "64Mi"
-        #     cpu: "500m"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
         restartPolicy: Always
